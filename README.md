@@ -7,7 +7,7 @@
 
 ## What, Why, How?
 
-If you're like clean, "upright" looking fonts, then the chances are that you've
+If you like clean, upright looking fonts, then the chances are that you've
 come across [Iosevka][]. You've probably also come across [PragmataPro][].
 
 Both of these fonts are great in their own right but they both suffer from one
