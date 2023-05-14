@@ -3,7 +3,7 @@ family = "Iosvmata"
 spacing = "fixed"
 serifs = "sans"
 no-cv-ss = true
-export-glyph-names = true
+export-glyph-names = false
 
 hintParams = ["-a", "qqq"]
 
