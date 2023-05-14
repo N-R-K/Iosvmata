@@ -5,7 +5,7 @@
 ***You can download the ttf files from the [releases tab][rel]
 (grab the `.tar.zst` file).***
 
-### What, Why, How?
+## What, Why, How?
 
 If you're like clean, "upright" looking fonts, then the chances are that you've
 come across [Iosevka][]. You've probably also come across [PragmataPro][].
@@ -43,7 +43,7 @@ notable changes (not exhaustive, see `Iosvmata.toml` for a full config):
 [Pragmasevka]: https://github.com/shytikov/pragmasevka
 [rel]: https://github.com/N-R-K/Iosvmata/releases
 
-### Build Instruction
+## Build Instruction
 
 1. Follow [these instructions][ios-build] to build the font out of
    `Iosvmata.toml` config.
@@ -54,7 +54,7 @@ notable changes (not exhaustive, see `Iosvmata.toml` for a full config):
 [ios-build]: https://github.com/be5invis/Iosevka/blob/main/doc/custom-build.md
 [NFP]: https://github.com/ryanoasis/nerd-fonts/releases/latest
 
-### Thanks to
+## Thanks to
 
 * [Pragmasevka][]: This project is pretty much a fork of Pragmasevka. So massive
   thanks to it for laying the groundwork.
