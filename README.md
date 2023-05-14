@@ -5,6 +5,8 @@
 ***You can download the ttf files from the [releases tab][rel]
 (grab the `.tar.zst` file).***
 
+### What, Why, How?
+
 If you're like clean, "upright" looking fonts, then the chances are that you've
 come across [Iosevka][]. You've probably also come across [PragmataPro][].
 
@@ -34,12 +36,23 @@ notable changes (not exhaustive, see `Iosvmata.toml` for a full config):
 * Uses the more "sharp" looking braces.
 * No ligatures.
 * A lot more non-alphanumeric characters are boldened compared to Pragmasevka
-  (see `punctuation.py`).
+  (see `bolder.py`).
 
 [Iosevka]: https://typeof.net/Iosevka
 [PragmataPro]: https://fsd.it/shop/fonts/pragmatapro/
 [Pragmasevka]: https://github.com/shytikov/pragmasevka
 [rel]: https://github.com/N-R-K/Iosvmata/releases
+
+### Build Instruction
+
+1. Follow [these instructions][ios-build] to build the font out of
+   `Iosvmata.toml` config.
+2. Run the `bolder.py` script.
+3. Optionally patch the final font with [Nerd-Font-Patcher][NFP]
+   (search for `FontPatcher.zip`).
+
+[ios-build]: https://github.com/be5invis/Iosevka/blob/main/doc/custom-build.md
+[NFP]: https://github.com/ryanoasis/nerd-fonts/releases/latest
 
 ### Thanks to
 
