@@ -1,0 +1,55 @@
+[buildPlans.Iosvmata]
+family = "Iosvmata"
+spacing = "fixed"
+serifs = "sans"
+no-cv-ss = true
+export-glyph-names = true
+
+hintParams = ["-a", "qqq"]
+
+[buildPlans.Iosvmata.variants]
+inherits = "ss08"
+
+[buildPlans.Iosvmata.widths.normal]
+shape = 550
+menu  = 5
+css   = "normal"
+
+[buildPlans.Iosvmata.metric-override]
+leading = 1100
+xHeight = 550
+
+[buildPlans.Iosvmata.variants.design]
+capital-j = "serifed"
+f = "flat-hook-serifed"
+l = "serifed"
+zero = "slashed"
+paren = "large-contour"
+brace = "curly-flat-boundary"
+ampersand = "closed"
+percent = "rings-continuous-slash"
+three = "flat-top"
+
+[buildPlans.Iosvmata.weights.regular]
+shape = 425
+menu = 400
+css = 400
+
+[buildPlans.Iosvmata.weights.semibold]
+shape = 600
+menu = 600
+css = 600
+
+[buildPlans.Iosvmata.weights.bold]
+shape = 800
+menu = 700
+css = 700
+
+[buildPlans.Iosvmata.weights.black]
+shape = 900
+menu = 900
+css = 900
+
+[buildPlans.Iosvmata.slopes]
+upright = "default.upright"
+italic = "default.italic"
