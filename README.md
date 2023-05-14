@@ -2,8 +2,14 @@
 
 ![Preview](preview.webp)
 
-***You can download the ttf files from the [releases tab][rel]
-(grab the `.tar.zst` file).***
+<h2 align=center>Download</h2>
+
+- - -
+
+_You can download the ttf files from the [releases tab][rel]
+(grab the `.tar.zst` file)._
+
+- - -
 
 ## What, Why, How?
 
