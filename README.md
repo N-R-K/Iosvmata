@@ -80,3 +80,8 @@ be the recommended tool.
 
 If you are comfortable with command-line, `zstd` provides official [builds for
 windows](https://github.com/facebook/zstd/releases/) including a `zstd.exe`.
+
+
+## ChangeLog v1.0.1
+
+* Do not export glyph names (slight decrease in font sizes).
