@@ -25,10 +25,11 @@ f = "flat-hook-serifed"
 l = "serifed"
 zero = "slashed"
 three = "flat-top"
-paren = "large-contour"
+paren = "normal"
 brace = "curly-flat-boundary"
 ampersand = "closed"
 percent = "rings-continuous-slash"
+caret = "low"
 
 [buildPlans.Iosvmata.weights.regular]
 shape = 425
