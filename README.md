@@ -81,6 +81,10 @@ be the recommended tool.
 If you are comfortable with command-line, `zstd` provides official [builds for
 windows](https://github.com/facebook/zstd/releases/) including a `zstd.exe`.
 
+## ChangeLog v1.2.0
+
+* Switched paren to "normal" from "large-contour".
+* Switched caret to "low".
 
 ## ChangeLog v1.0.1
 
