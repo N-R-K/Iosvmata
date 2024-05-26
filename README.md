@@ -51,11 +51,19 @@ notable changes (not exhaustive, see `Iosvmata.toml` for a full config):
 
 ## Build Instruction
 
+Building the font yourself is not necessary since I provide `ttf` files in the
+[release][rel] page.
+But if you'd like to customize the font further, e.g add ligatures or change
+spacing etc, then you can build the font yourself by following the steps below:
+
 1. Follow [these instructions][ios-build] to build the font out of
    `Iosvmata.toml` config.
 2. Run the `bolder.py` script.
 3. Optionally patch the final font with [Nerd-Font-Patcher][NFP]
    (search for `FontPatcher.zip`).
+
+See also: [Iosevka customizer](https://typeof.net/Iosevka/customizer) in order
+to customize the config interactively.
 
 [ios-build]: https://github.com/be5invis/Iosevka/blob/main/doc/custom-build.md
 [NFP]: https://github.com/ryanoasis/nerd-fonts/releases/latest
