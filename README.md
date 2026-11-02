@@ -65,6 +65,9 @@ spacing etc, then you can build the font yourself by following the steps below:
 See also: [Iosevka customizer](https://typeof.net/Iosevka/customizer) in order
 to customize the config interactively.
 
+NOTE: The config in this repo was tested with Iosevka version 22 and may not
+work on newer versions.
+
 [ios-build]: https://github.com/be5invis/Iosevka/blob/main/doc/custom-build.md
 [NFP]: https://github.com/ryanoasis/nerd-fonts/releases/latest
 
