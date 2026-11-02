@@ -1,0 +1,79 @@
+name: build
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  IOSEVKA_REF: cea353b17b9b5c6e22da4f0fcae66f16d68a4edf # v34.9.1
+  NERD_FONTS_VERSION: v3.5.1
+  FONT_PATCHER_SHA256: 42bcb32145499a35732274c7fc48deb434ad0d2e0e118f98527c1479c6fa251a
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: be5invis/Iosevka
+          ref: ${{ env.IOSEVKA_REF }}
+          path: Iosevka
+          persist-credentials: false
+
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 24
+
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y ttfautohint fontforge python3-fontforge python3-fonttools
+
+      - name: Build
+        working-directory: Iosevka
+        run: |
+          cp ../Iosvmata.toml private-build-plans.toml
+          npm ci
+          npm run build -- ttf-unhinted::Iosvmata
+          python3 ../bolder.py
+
+      - name: Package
+        run: |
+          name=Iosvmata-${GITHUB_REF_NAME}
+          mkdir -p "$name/Normal" "$name/Nerd"
+          curl -fsSLO "https://github.com/ryanoasis/nerd-fonts/releases/download/$NERD_FONTS_VERSION/FontPatcher.zip"
+          echo "$FONT_PATCHER_SHA256  FontPatcher.zip" | sha256sum -c
+          unzip -q FontPatcher.zip -d FontPatcher
+          for style in Regular Italic Bold BoldItalic; do
+            ttf=Iosevka/dist/Iosvmata/TTF/Iosvmata-$style.ttf
+            cp "$ttf" "$name/Normal/"
+            fontforge -script FontPatcher/font-patcher --mono --complete --makegroups -1 --no-progressbars -out "$name/Nerd" "$ttf"
+          done
+          tar -I 'zstd -19' -cf "$name.tar.zst" "$name"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: Iosvmata
+          path: Iosvmata-*.tar.zst
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: Iosvmata
+
+      - run: gh release create "$GITHUB_REF_NAME" -R "$GITHUB_REPOSITORY" Iosvmata-*.tar.zst
+        env:
+          GH_TOKEN: ${{ github.token }}
