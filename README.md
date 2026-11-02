@@ -56,10 +56,14 @@ Building the font yourself is not necessary since I provide `ttf` files in the
 But if you'd like to customize the font further, e.g add ligatures or change
 spacing etc, then you can build the font yourself by following the steps below:
 
-1. Follow [these instructions][ios-build] to build the font out of
-   `Iosvmata.toml` config.
-2. Run the `bolder.py` script.
-3. Optionally patch the final font with [Nerd-Font-Patcher][NFP]
+1. Follow [these instructions][ios-build], using `Iosvmata.toml` as
+   `private-build-plans.toml`, and run
+   `npm run build -- ttf-unhinted::Iosvmata`.
+2. From the Iosevka directory, run `bolder.py` (needs `fonttools` and
+   `ttfautohint`). The fonts end up in `dist/Iosvmata/TTF`.
+3. The SemiBold and Black fonts in `TTF-Unhinted` are only built to take
+   the punctuation from and can be ignored.
+4. Optionally patch the final font with [Nerd-Font-Patcher][NFP]
    (search for `FontPatcher.zip`).
 
 See also: [Iosevka customizer](https://typeof.net/Iosevka/customizer) in order
